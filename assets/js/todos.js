@@ -21,6 +21,9 @@ $("ul").on("click", ".copy", function(event) {
   $temp.val($(adjacentSpan).text()).select();
   document.execCommand("copy");
   $temp.remove();
+  $("#tooltip").fadeToggle(function() {
+    $(this).fadeToggle(800);
+  });
   event.stopPropagation();
 });
 
@@ -32,9 +35,13 @@ $("input[type='text']").keypress(function(event) {
     $("ul").append(
       '<li><span class="delete far fa-trash-alt"></span><span class="content"> ' +
         todoText +
-        '</span> <span class="hidden copy far fa-copy"></span></li>'
+        '</span> <span class="copy far fa-copy"></span></li>'
     );
     // clear the input
     $(this).val("");
   }
+});
+
+$(".fa-plus-square").click(function() {
+  $("input[type='text']").fadeToggle();
 });
