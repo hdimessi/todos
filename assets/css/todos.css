@@ -1,0 +1,27 @@
+#container {
+  border: 2px solid gray;
+  width: 360px;
+  margin: 0 auto;
+}
+
+li {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+}
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.copy {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
