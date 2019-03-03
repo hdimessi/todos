@@ -4,10 +4,6 @@ $("ul").on("click", ".content", function() {
   $(this).toggleClass("completed");
 });
 
-$("ul").on("mouseenter mouseleave", "li", function() {
-  $(this.lastElementChild).toggleClass("hidden");
-});
-
 $("ul").on("click", ".delete", function(event) {
   $(this)
     .parent()
@@ -18,8 +14,6 @@ $("ul").on("click", ".delete", function(event) {
 });
 
 $("ul").on("click", ".copy", function(event) {
-  console.log("hhh");
-
   let adjacentSpan = $(this).prev();
   console.log(adjacentSpan);
   var $temp = $("<input>");
@@ -36,9 +30,9 @@ $("input[type='text']").keypress(function(event) {
     var todoText = $(this).val();
     // create a new li and add it to ul
     $("ul").append(
-      '<li><span class="delete">X</span><span class="content"> ' +
+      '<li><span class="delete far fa-trash-alt"></span><span class="content"> ' +
         todoText +
-        '</span> <span class="copy">C</span></li>'
+        '</span> <span class="hidden copy far fa-copy"></span></li>'
     );
     // clear the input
     $(this).val("");
